@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        #intro{
+            position: absolute;
+            opacity: 0;
+            left: 37%;
+            top: 36%;
+            font-size: 55px;
+            background: rgb(27, 27, 27);
+           color: rgb(6, 116, 83);
+        }   
+        .contain{
+            position: absolute;
+      opacity: 0;
+            width: 930px;
+            height: 570px;
+            left: 16%;
+            top: 6%;
+            background-color:rgb(17, 16, 16) ;
+            border: 5px solid rgb(5, 102, 73) ;
+            border-radius: 25px;
+        }  
+        .b{
+            position: absolute;
+            transition: 1s;
+            left: -950px;
+            width: 380px;
+            height: 5px;
+            top: 16%;
+            background-color: rgb(5, 102, 73);
+        }
+        .h{
+            transition: 1s;
+            left: 0px;
+        }
+        .q{
+            position: absolute;
+            color: rgb(5, 102, 73);
+            font-size: 35px;
+            left: 8%;
+        }
+        #e{
+            position: absolute;
+            top: 14%;
+        }
+        #s{
+            position: absolute;
+            top: 28%;
+        }
+        #m{
+            position: absolute;
+            top: 43%;
+        }
+        #ss{
+            position: absolute;
+            top: 58%;
+        }
+        #c{
+            position: absolute;
+            top: 72%;
+        }
+        #we{
+            position: absolute;
+            color : rgb(5, 102, 73);
+            font-size: 30px;
+            left: 6%;
+        }
+        #under{
+            position: absolute;
+            width: 250px;
+            left: 4%;
+            top: 9%;
+            height: 6px;
+            background-color : rgb(5, 102, 73);
+        }
+        .input{
+            background-color:rgb(27, 27, 27);
+            color: white;
+        }
+        #arrow{
+            position: absolute;
+            transform: rotateX(180deg);
+            font-size: 45px;
+            left: 68%;
+            top: 50%;
+            color: rgb(5, 102, 73);
+        }
+       #percent{
+           position: absolute;
+           left: 58%;
+           font-size: 50px;
+           top: 40%;
+           color: rgb(5, 102, 73);
+       }
+       #outcome{
+           position: absolute;
+           left: 66%;
+           font-size: 40px;
+           top: 60%;
+           color: rgb(5, 102, 73);
+           border-bottom-style: solid;
+       }
+       #button{
+           position: absolute;
+           width: 175px;
+           height: 70px;
+           left: 60%;
+           border-radius: 10px;
+           cursor: pointer;
+           font-size: 25px;
+           top: 25%;
+           background-color: rgb(19, 18, 18);
+           color:white;
+           border: 4px solid rgb(5, 102, 73) ;
+       }
+       #button:hover{
+           transition: 1s;
+           background-color:  rgb(5, 102, 73);
+           color: white;
+       }
+    </style>
+</head>
+<body style="background-color: rgb(27, 27, 27);">
+    <p id="intro">Grade Calculator</p>
+    <p class="b"></p>
+    <div>
+        <div class="contain">
+            <p id="under"></p>
+            <p id="we">Marks out of 100</p>
+          <p class="q" id="e">English : <input type="number" class="input" id="i1" placeholder="Enter marks"></p>
+          <p class="q" id="s">M/S/F : <input type="number" class="input" id="i2" placeholder="Enter marks"></p>
+          <p class="q" id="m">Maths : <input type="number" class="input" id="i3" placeholder="Enter marks"></p>
+          <p class="q" id="ss">SST : <input type="number" class="input" id="i4" placeholder="Enter marks"></p>
+          <p class="q" id="c">Science : <input type="number" class="input" id="i5" placeholder="Enter marks"></p>
+          <p id="percent">Percentage</p>
+          <p id="arrow">&#8593;</p>
+          <p id="outcome">0%</p>
+          <button type="button" onclick="myfunction()" id="button">Calculate</button>
+        </div>
+    </div>
+</body>
+<script>
+    let rotate = -90;
+    let b =  document.querySelector(".b");
+    let intro = document.getElementById("intro");
+    let i1 = document.getElementById("i1");
+    let i2 = document.getElementById("i2");
+    let i3 = document.getElementById("i3");
+    let i4 = document.getElementById("i4");  
+    let i5 = document.getElementById("i5");
+    let outcome = document.getElementById("outcome");
+    function myfunction(){
+        let x = parseFloat(i1.value)+parseFloat(i2.value)+ parseFloat(i3.value) +parseFloat(i4.value)+parseFloat(i5.value);
+       let y = x/500*100;
+       outcome.innerHTML = y + "%";
+    }
+  window.onload = function(){
+      intro.style.transition = "2s";
+      setTimeout(function(){
+        b.classList.toggle("h");
+      },500)
+      intro.style.opacity = "1";
+      intro.append(b);
+      setTimeout(function(){
+        intro.style.transition = "2s";
+          intro.style.opacity = "0"
+      }, 5000);
+  
+       setTimeout(function(){contain.style.transition = "4s"
+       contain.style.opacity = "1"} , 8000)
+   }
+   let contain = document.querySelector(".contain");
+</script>
+</html>
